@@ -135,7 +135,7 @@ where
         pp.reverse();
 
         Ok((
-            b.into_inner().map_rows_into_owned(|b: Vec<_>| {
+            b.into_inner().map_rows_into_owned(|b: Vec<_>| -> Tf<T, Vec<T>, Vec<T>> {
                 let na = a.len();
                 let nb = b.len();
                 let n = na.max(nb);

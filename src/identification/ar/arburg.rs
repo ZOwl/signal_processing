@@ -42,7 +42,7 @@ where
         (
             Ar::new(ar.av.map_into_owned(|(mut a, v)| {
                 a.resize(N, T::zero());
-                (a.try_into().ok().unwrap(), v)
+                (TryInto::<[T; N]>::try_into(a).ok().unwrap(), v)
             })),
             k.map_into_owned(|mut k: Vec<T>| {
                 k.resize(N - 1, T::zero());
